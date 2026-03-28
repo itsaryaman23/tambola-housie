@@ -1,0 +1,113 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    flex-wrap: wrap;
+}
+
+.btnControl {
+    width: 75px;
+    border-radius: 100%;
+    height: 75px;
+    background-color: black;
+    border: 2px solid white;
+    /* font-weight: bolder; */
+    font-size: 15px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.btnControl:hover {
+    background-color: white;
+    color: black;
+}
+
+.callerContainer {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    /* border: 1px solid white; */
+}
+
+.speedButton {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: black;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+.speedButton:hover {
+    background-color: white;
+    color: black;
+}
+
+.speedLabel {
+    margin: 0;
+}
+
+.speedContainer {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnMode {
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: black;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+.btnMode:hover {
+    background-color: white;
+    color: black;
+}
+
+.modeContainer {
+    display: flex;
+}
+
+.btnLeft {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.btnRight {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.pressed {
+    background-color: white;
+    color: black;
+}
+
+.currentNumber {
+    font-size: 60px;
+    margin: 0px;
+}
+
+.btnStart {
+    width: 100px;
+    height: 100px;
+    font-size: larger;
+}
+
+hr {
+    transform: rotate(90deg);
+    width: 100%;
+    height: 1px;
+    margin: 0px;
+}

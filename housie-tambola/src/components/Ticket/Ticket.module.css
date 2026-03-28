@@ -1,0 +1,43 @@
+.outerBorder{
+    width: 474px;
+    height: 156px;
+    border: 3px solid white;
+    border-radius: 20px;
+    justify-self: center;
+    text-align: center;
+    font-size: 1.7rem;
+}
+.firstRow, .secondRow{
+    border-bottom: 3px solid white;
+}
+.row{
+    height: 50px;
+    width: 100%;
+    display: flex;
+}
+
+.numberBox{
+    border-right: 3px solid white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.firstRow > div:nth-child(9) {
+    border: none;
+}
+.secondRow > div:nth-child(9) {
+    border: none;
+}
+.thirdRow > div:nth-child(9) {
+    border: none;
+}
+.firstRow > div, .secondRow >div, .thirdRow>div{
+    cursor: pointer;
+}
+
+.striked{
+    text-decoration: line-through;
+}

@@ -1,0 +1,50 @@
+.gridContainer {
+    width: 600px;
+    height: 500px;
+    /* border: 2px solid white; */
+    border-radius: 10px;
+    /* box-sizing: border-box; */
+    justify-self: center;
+
+}
+
+.gridBox {
+    width: 50px;
+    height: 50px;
+    border: 1px solid white;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* cursor: pointer; */
+    margin: 2px;
+
+}
+
+.pressed {
+    background-color: white;
+    color: black;
+}
+
+/* .gridBox:last-child {
+    border: none;
+} */
+
+.gridRow {
+    width: 600px;
+    /* border-bottom: 2px solid white; */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+}
+
+/* .gridRow:last-child {
+    border-bottom: none;
+} */
+
+/* Hide the entire Number Grid on mobile screens */
+/* @media (max-width: 768px) {
+    .gridContainer {
+        display: none;
+    }
+} */

@@ -1,0 +1,26 @@
+* {
+    color: white;
+    background-color: black;
+    text-align: center;
+}
+
+.btn {
+    background-color: black;
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+    border: 1px solid white;
+    border-radius: 100%;
+}
+
+.btn:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.btnContainer {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}

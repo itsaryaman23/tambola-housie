@@ -1,0 +1,27 @@
+.btnSpeed{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    border: 2px solid white;
+    background-color: #565656;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.btnControl{
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #565656;
+border: 2px solid white;
+    cursor: pointer;
+    margin: 10px;
+}
+.btnSpeed:hover, .btnControl:hover{
+    background-color: white;
+    color: black
+}
+.pressed{
+    background-color: white;
+    color: black;
+}
