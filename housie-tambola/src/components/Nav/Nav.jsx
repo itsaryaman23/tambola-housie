@@ -10,11 +10,14 @@ export default function Nav({ setView, view }) {
     }
 
     return (<>
-        <h1>TAMBOLA HOUSIE</h1>
-        {view == "Home" ? (<div className={NavStyles.btnContainer}>
-            <button className={NavStyles.btn} onClick={handleClick}>Number Caller</button>
-            <button className={NavStyles.btn} onClick={handleClick}>Ticket</button>
-        </div>) : (<button className={NavStyles.btn} onClick={handleClick}>Home</button>)
-        }
+        <div className={NavStyles.container}>
+
+            <h1>TAMBOLA HOUSIE</h1>
+            {view == "Home" ? (<div className={NavStyles.btnContainer}>
+                <button className={NavStyles.btn} onClick={handleClick}>Number Caller</button>
+                <button className={NavStyles.btn} onClick={handleClick}>Ticket</button>
+            </div>) : (<button className={NavStyles.btn} onClick={handleClick}>Home</button>)
+            }
+        </div>
     </>)
 }
