@@ -10,8 +10,8 @@ const Ticket = () => {
   }, [])
 
   const handleClick = (e) => {
-    e.target.style.color = "red";
-    //    e.target.style.color = e.target.style.color = 'red'?'white':'red';
+    e.target.style.textDecoration = "line-through";
+    e.target.style.color = "grey";
   }
   return (<>
     <div className={ticketStyle.outerBorder}>

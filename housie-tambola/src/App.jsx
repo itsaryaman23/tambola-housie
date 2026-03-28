@@ -12,7 +12,6 @@ function App() {
   return (
     <div className="App">
       <Nav setView={setView} view={view} />
-      <br />
       {view == "Number Caller" && (<NumberCaller />)}
       {view == "Ticket" && (<Ticket />)}
       {/* <NumberCaller /> */}
