@@ -19,6 +19,7 @@
 @media screen and (max-width: 500px) {
     .footerContainer {
         align-items: center;
+        margin-top: 10px;
     }
 
     .footerText {
