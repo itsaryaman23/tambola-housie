@@ -20,4 +20,8 @@
     .footerContainer {
         align-items: center;
     }
+
+    .footerText {
+        padding: 0px;
+    }
 }
