@@ -19,7 +19,7 @@ export default function Nav({ setView, view, setResetKey }) {
                 <button className={NavStyles.btn} onClick={handleClick}>Ticket</button>
             </div>) : (<div className={NavStyles.containerNotOnHome}>
                 <button className={NavStyles.homeBtn} onClick={handleClick}>Home</button>
-                {/* <button className={NavStyles.homeBtn} onClick={handleReset}>New Ticket</button> */}
+                {view == "Ticket" && (<button className={NavStyles.homeBtn} onClick={handleReset}>New Ticket</button>)}
 
             </div>)
             }
