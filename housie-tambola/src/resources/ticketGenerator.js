@@ -10,13 +10,13 @@ function ticketGenerator() {
     }
     let numbers;
     if (i === 0) {
-      numbers = randomRangeGenerator(i * 10 + 1, i * 10 + 9, q);
+      numbers = randomRangeGenerator(1, 9, q);
     }
     else if (i === 8) {
-      numbers = randomRangeGenerator((i - 1) * 10 + 1, i * 10, q);
+      numbers = randomRangeGenerator(80, 90, q);
     }
     else {
-      numbers = randomRangeGenerator(i * 10 + 1, i * 10 + 9, q);
+      numbers = randomRangeGenerator(i * 10, i * 10 + 9, q);
     }
     for (let k = 0; k < 3; k++) {
       if (template[k][i] === 1)

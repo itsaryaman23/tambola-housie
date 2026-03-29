@@ -1,7 +1,8 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useAudio } from "react";
 import NumberGrid from "../NumberGrid/NumberGrid";
 import numberListOriginal from "../../resources/numberList";
 import NumberCallerStyle from "./NumberCaller1.module.css";
+
 
 const NumberCaller = () => {
     const [currentNumber, setCurrentNumber] = useState(0);
@@ -15,8 +16,10 @@ const NumberCaller = () => {
     const intervalIdRef = useRef(0);
 
     useEffect(() => {
-        // console.log(numberList);
-    }, [numberList]);
+        const audio = new Audio(`/audio/${currentNumber}.mp3`);
+        // const audio = new Audio(`/audio/1.mp3`);
+        audio.play();
+    }, [currentNumber]);
 
     useEffect(() => {
         if (gameMode === "M") {
