@@ -34,11 +34,6 @@
     border: 2px solid white;
     border-radius: 100%;
     font-weight: 500;
-}
-
-.btn:hover {
-    background-color: white;
-    color: black;
     cursor: pointer;
 }
 
@@ -47,15 +42,21 @@
     height: 40px;
     border-radius: 10px;
     border: 2px solid white;
-}
-
-.homeBtn:hover {
-    background-color: white;
-    color: black;
     cursor: pointer;
 }
 
 
+@media (hover: hover) {
+    .homeBtn:hover {
+        background-color: white;
+        color: black;
+    }
+
+    .btn:hover {
+        background-color: white;
+        color: black;
+    }
+}
 
 @media screen and (max-width: 1024px) {
     .container {
@@ -89,6 +90,8 @@
 
     .containerNotOnHome {
         gap: 20px;
+        height: auto;
+        margin-bottom: 1%;
     }
 
     .btnContainer {
