@@ -25,4 +25,4 @@ const NumberGrid = ({ calledNumbers }) => {
     </>
   );
 };
-export default NumberGrid;
+export default NumberGrid; 

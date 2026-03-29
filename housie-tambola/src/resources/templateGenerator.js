@@ -228,9 +228,9 @@ function templateGenerator() {
     let firstRow = firstRowGenerator();
     let secondRow = secondRowGenerator(firstRow);
     let thirdRow = thirdRowGenerator(firstRow, secondRow);
-    console.log(...firstRow)
-    console.log(...secondRow)
-    console.log(...thirdRow)
+    // console.log(...firstRow)
+    // console.log(...secondRow)
+    // console.log(...thirdRow)
     return [firstRow, secondRow, thirdRow];
 }
 templateGenerator();

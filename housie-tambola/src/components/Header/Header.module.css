@@ -1,0 +1,69 @@
+.headerContainer {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+.headerOnHome .heading {
+    margin: 0px;
+    font-size: 50px;
+
+}
+
+.heading {
+    font-size: 50px;
+}
+
+/* .headerNotOnHome .heading {
+    font-size: 30px;
+} */
+
+
+.headerHome {
+    height: 30vh;
+    align-items: flex-end;
+}
+
+
+
+.headerNotHome {
+    height: 20vh;
+    align-items: flex-end;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+    .headerHome {
+        height: 25vh;
+    }
+
+    .heading {
+        font-weight: 700;
+        font-size: 50px;
+    }
+
+    .headerNotHome {
+        height: 15vh;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .headerHome {
+        height: 25vh;
+    }
+
+    .heading {
+        font-weight: 600;
+    }
+
+    .headerNotHome {
+        height: 15vh;
+    }
+
+    .headerNotHome .heading {
+        font-size: 30px;
+    }
+}

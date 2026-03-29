@@ -15,7 +15,7 @@ const NumberCaller = () => {
     const intervalIdRef = useRef(0);
 
     useEffect(() => {
-        console.log(numberList);
+        // console.log(numberList);
     }, [numberList]);
 
     useEffect(() => {
@@ -73,8 +73,6 @@ const NumberCaller = () => {
 
     return (
         <div className={NumberCallerStyle.container}>
-
-            {/* <hr /> */}
             <div className={NumberCallerStyle.callerContainer}>
                 <div className={NumberCallerStyle.modeContainer}>
                     <button
@@ -102,8 +100,6 @@ const NumberCaller = () => {
                         Auto
                     </button>
                 </div>
-
-                {/* <h4 className={NumberCallerStyle.speedLabel}>Speed:</h4> */}
                 <div
                     className={NumberCallerStyle.speedContainer}
                     style={{ display: gameMode === "A" ? "flex" : "none" }}

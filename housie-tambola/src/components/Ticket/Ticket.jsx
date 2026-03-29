@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import ticketStyle from './Ticket.module.css';
 import generateTambolaTicket from '../../resources/ticketGenerator';
 
 const Ticket = () => {
+  const ticketRef = useRef(0);
   const [ticketNumbers, setTicketNumber] = useState([]);
   useEffect(() => {
     setTicketNumber(generateTambolaTicket());
-    console.log(ticketNumbers);
+    // console.log(ticketNumbers);
   }, [])
 
   const handleClick = (e) => {
@@ -19,7 +20,7 @@ const Ticket = () => {
         {
           ticketNumbers.length &&
           (
-            ticketNumbers[0].map(ticketNumber => <div className={ticketStyle.numberBox} onClick={handleClick} >{ticketNumber === 0 ? ' ' : ticketNumber}</div>)
+            ticketNumbers[0].map(ticketNumber => <div key={ticketRef.current++} className={ticketStyle.numberBox} onClick={handleClick} >{ticketNumber === 0 ? ' ' : ticketNumber}</div>)
           )
         }
       </div>
@@ -27,7 +28,7 @@ const Ticket = () => {
         {
           ticketNumbers.length &&
           (
-            ticketNumbers[1].map(ticketNumber => <div className={ticketStyle.numberBox} onClick={handleClick}>{ticketNumber === 0 ? ' ' : ticketNumber}</div>)
+            ticketNumbers[1].map(ticketNumber => <div key={ticketRef.current++} className={ticketStyle.numberBox} onClick={handleClick}>{ticketNumber === 0 ? ' ' : ticketNumber}</div>)
           )
         }
       </div>
@@ -35,7 +36,7 @@ const Ticket = () => {
         {
           ticketNumbers.length &&
           (
-            ticketNumbers[2].map(ticketNumber => <div className={ticketStyle.numberBox} disabled onClick={handleClick}>{ticketNumber === 0 ? ' ' : ticketNumber}</div>)
+            ticketNumbers[2].map(ticketNumber => <div key={ticketRef.current++} className={ticketStyle.numberBox} disabled onClick={handleClick}>{ticketNumber === 0 ? ' ' : ticketNumber}</div>)
           )
         }
       </div>

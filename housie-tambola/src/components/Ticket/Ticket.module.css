@@ -1,4 +1,4 @@
-.outerBorder {
+/* .outerBorder {
     width: 474px;
     height: 156px;
     border: 3px solid white;
@@ -8,9 +8,81 @@
     font-size: 1.7rem;
     margin-top: 20px;
     overflow: hidden;
+} */
+.outerBorder {
+    width: 450px;
+    height: 150px;
+    border: 3px solid white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    overflow: hidden;
+    align-self: center;
+    justify-self: center;
 }
 
 .firstRow,
+.secondRow,
+.thirdRow {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.firstRow,
+.secondRow {
+    border-bottom: 3px solid white;
+}
+
+.numberBox {
+    width: 100%;
+    height: 100%;
+    border-right: 3px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.firstRow :last-child,
+.secondRow :last-child,
+.thirdRow :last-child {
+    border: none;
+}
+
+
+
+@media screen and (max-width: 500px) {
+    .outerBorder {
+        width: 150px;
+        height: 450px;
+        flex-direction: row;
+    }
+
+    .firstRow,
+    .secondRow {
+        border: none;
+        border-right: 3px solid white;
+    }
+
+    .numberBox {
+        border: none;
+        border-bottom: 3px solid white;
+    }
+
+    .firstRow,
+    .secondRow,
+    .thirdRow {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+
+/* .firstRow,
 .secondRow {
     border-bottom: 3px solid white;
 }
@@ -48,3 +120,28 @@
 .thirdRow>div {
     cursor: pointer;
 }
+
+@media screen and (max-width: 450px) {
+    .outerBorder {
+        height: 474px;
+        width: 156px;
+    }
+
+    .row {
+        height: 50px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .numberBox {
+        border-right: 1px solid white;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+    }
+} */

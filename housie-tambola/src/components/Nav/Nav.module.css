@@ -1,25 +1,39 @@
-* {
-    color: white;
-    background-color: black;
-    text-align: center;
+.containerOnHome {
+    height: 400px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 50px;
+    /* background-color: red; */
 }
 
-.container {}
+.containerNotOnHome {
+    height: 100px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 50px;
+    /* background-color: pink; */
+}
+
+.btnContainer {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+}
 
 .btn {
     background-color: black;
-    border-radius: 10px;
     width: 100px;
     height: 100px;
     border: 2px solid white;
     border-radius: 100%;
     font-weight: 500;
-}
-
-.homeBtn {
-    width: 100px;
-    height: 40px;
-    border-radius: 8px;
 }
 
 .btn:hover {
@@ -28,8 +42,68 @@
     cursor: pointer;
 }
 
-.btnContainer {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
+.homeBtn {
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border: 2px solid white;
+}
+
+.homeBtn:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+    .container {
+        /* height: 500px; */
+        height: auto;
+        margin-top: 10%;
+    }
+
+    .containerOnHome {
+        gap: 50px;
+    }
+
+    .btn {
+        width: 150px;
+        height: 150px;
+        font-weight: 600;
+        font-size: 20px;
+        border-width: 3px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .container {
+        height: 400px;
+    }
+
+    .containerOnHome {
+        gap: 40px;
+        flex-direction: column;
+    }
+
+    .containerNotOnHome {
+        gap: 20px;
+    }
+
+    .btnContainer {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100px;
+        height: 100px;
+        font-weight: 400;
+        font-size: 14px;
+        border-width: 2px;
+    }
 }

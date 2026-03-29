@@ -39,8 +39,8 @@ function randomRangeGenerator(min, max, quantity) {
 }
 
 let ticket = ticketGenerator();
-for (const row of ticket) {
-  console.log(...row);
-}
+// for (const row of ticket) {
+//   console.log(...row);
+// }
 
 export default ticketGenerator;
