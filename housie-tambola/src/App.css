@@ -15,3 +15,11 @@
     /* padding: 0px; */
     box-sizing: border-box;
 }
+
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .App {
+        justify-content: flex-start;
+        padding-top: 20px;
+        margin-bottom: 30px;
+    }
+}
