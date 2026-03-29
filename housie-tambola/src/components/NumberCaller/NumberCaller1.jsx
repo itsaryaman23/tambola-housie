@@ -12,10 +12,12 @@ const NumberCaller = () => {
     const [gameMode, setGameMode] = useState("A");
     const [speed, setSpeed] = useState(5);
     const [controlName, setControlName] = useState("Start");
+    const [prev, setPrev] = useState(null);
 
     const intervalIdRef = useRef(0);
 
     useEffect(() => {
+        if (currentNumber === 0) return;
         const audio = new Audio(`/audio/${currentNumber}.mp3`);
         // const audio = new Audio(`/audio/1.mp3`);
         audio.play();
@@ -41,7 +43,7 @@ const NumberCaller = () => {
         const index = Math.floor(Math.random() * numberList.length);
         const number = numberList[index];
         setCurrentNumber(number);
-        setCalledNumbers((prev) => new Set([...prev, number]));
+        // setCalledNumbers((prev) => new Set([...prev, number]));
         setNumberList((prev) => prev.filter((_, i) => i !== index));
     };
 
@@ -71,6 +73,8 @@ const NumberCaller = () => {
         setSpeed(s);
     };
     const handleNext = (e) => {
+        setCalledNumbers((prev) => new Set([...prev, currentNumber]));
+        setPrev(currentNumber);
         nextNumber();
     };
 
@@ -111,11 +115,11 @@ const NumberCaller = () => {
                         className={
                             NumberCallerStyle.speedButton +
                             " " +
-                            (speed === 3 ? NumberCallerStyle.pressed : "")
+                            (speed === 3 ? NumberCallerStyle.pressed : "") + NumberCallerStyle.btnLeft
                         }
                         onClick={() => changeSpeed(3)}
                     >
-                        3
+                        Fastest
                     </button>
                     <button
                         className={
@@ -125,7 +129,7 @@ const NumberCaller = () => {
                         }
                         onClick={() => changeSpeed(4)}
                     >
-                        4
+                        Fast
                     </button>
                     <button
                         className={
@@ -135,7 +139,7 @@ const NumberCaller = () => {
                         }
                         onClick={() => changeSpeed(5)}
                     >
-                        5
+                        Normal
                     </button>
                     <button
                         className={
@@ -145,17 +149,17 @@ const NumberCaller = () => {
                         }
                         onClick={() => changeSpeed(6)}
                     >
-                        6
+                        Slow
                     </button>
                     <button
                         className={
                             NumberCallerStyle.speedButton +
                             " " +
-                            (speed === 7 ? NumberCallerStyle.pressed : "")
+                            (speed === 7 ? NumberCallerStyle.pressed : "") + NumberCallerStyle.btnRight
                         }
                         onClick={() => changeSpeed(7)}
                     >
-                        7
+                        Slowest
                     </button>
                 </div>
                 <div>
@@ -194,7 +198,7 @@ const NumberCaller = () => {
                     </button>
                 </div>
             </div>
-            <NumberGrid calledNumbers={calledNumbers} />
+            <NumberGrid calledNumbers={calledNumbers} prev={prev} current={currentNumber} />
         </div >
     );
 };

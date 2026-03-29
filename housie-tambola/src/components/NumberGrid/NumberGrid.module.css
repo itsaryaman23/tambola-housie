@@ -8,6 +8,8 @@
 
 }
 
+
+
 .gridBox {
     width: 40px;
     height: 40px;
@@ -22,9 +24,17 @@
 }
 
 .pressed {
-    background-color: white;
+    background-color: darkgrey;
     color: black;
 }
+
+.prev {
+    background-color: white;
+}
+
+/* .current {
+    background-color: white;
+} */
 
 /* .gridBox:last-child {
     border: none;

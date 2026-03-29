@@ -18,9 +18,9 @@
 }
 
 .speedButton {
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
+    width: 70px;
+    height: 40px;
+    /* border-radius: 10px; */
     background-color: black;
     border: 2px solid white;
     cursor: pointer;
@@ -31,20 +31,19 @@
 .btnMode {
     width: 100px;
     height: 50px;
-    border-radius: 10px;
     background-color: black;
     border: 2px solid white;
     cursor: pointer;
 }
 
 .btnLeft {
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .btnRight {
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .btnMode:hover {
@@ -62,6 +61,54 @@
     cursor: pointer;
     margin: 10px;
 }
+
+.speedLabel {
+    margin: 0;
+}
+
+.speedContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*enable the below code to enable round speed buttons
+/* .speedContainer {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+} */
+
+
+.modeContainer {
+    display: flex;
+}
+
+
+
+.pressed {
+    background-color: white;
+    color: black;
+}
+
+.currentNumber {
+    font-size: 60px;
+    margin: 0px;
+}
+
+.btnStart {
+    width: 100px;
+    height: 100px;
+    font-size: larger;
+}
+
+/* hr {
+    transform: rotate(90deg);
+    width: 100%;
+    height: 1px;
+    margin: 0px;
+} */
 
 @media screen and (hover: hover) {
     .btnControl:hover {
@@ -110,15 +157,15 @@
         font-size: 50px;
     }
 
-    .speedButton {
+    /* .speedButton {
         width: 40px;
         height: 40px;
         font-size: 14px;
-    }
+    } */
 
-    .speedContainer {
+    /* .speedContainer {
         flex-wrap: wrap;
-    }
+    } */
 }
 
 @media screen and (max-width: 500px) {
@@ -132,50 +179,7 @@
         gap: 20px;
     }
 
-    .speedButton {
+    /* .speedButton {
         font-size: 18px;
-    }
-}
-
-
-.speedLabel {
-    margin: 0;
-}
-
-.speedContainer {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-}
-
-
-
-.modeContainer {
-    display: flex;
-}
-
-
-
-.pressed {
-    background-color: white;
-    color: black;
-}
-
-.currentNumber {
-    font-size: 60px;
-    margin: 0px;
-}
-
-.btnStart {
-    width: 100px;
-    height: 100px;
-    font-size: larger;
-}
-
-hr {
-    transform: rotate(90deg);
-    width: 100%;
-    height: 1px;
-    margin: 0px;
+    } */
 }

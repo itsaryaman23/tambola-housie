@@ -1,6 +1,6 @@
 import Styles from "./NumberGrid.module.css";
 
-const NumberGrid = ({ calledNumbers }) => {
+const NumberGrid = ({ calledNumbers, prev, current }) => {
   return (
     <>
       <div className={Styles.gridContainer}>
@@ -13,7 +13,9 @@ const NumberGrid = ({ calledNumbers }) => {
                 className={
                   Styles.gridBox +
                   " " +
-                  (calledNumbers.has(j + 1 + i * 10) ? Styles.pressed : "")
+                  (calledNumbers.has(j + 1 + i * 10) ? Styles.pressed : "") +
+                  " " +
+                  (prev === j + 1 + i * 10 ? Styles.prev : "")
                 }
               >
                 {j + 1 + i * 10}

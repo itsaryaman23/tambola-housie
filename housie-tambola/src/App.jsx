@@ -6,10 +6,11 @@ import Ticket from './components/Ticket/Ticket';
 import NumberGrid from './components/NumberGrid/NumberGrid';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import Rules from './components/Rules/Rules';
 import './App.css'
 
 function App() {
-  const [view, setView] = useState("Home");
+  const [view, setView] = useState("Back");
   const [resetKey, setResetKey] = useState(0);
 
   useEffect(() => {
@@ -22,6 +23,7 @@ function App() {
       <Nav setView={setView} view={view} setResetKey={() => setResetKey(resetKey + 1)} />
       {view == "Number Caller" && (<NumberCaller />)}
       {view == "Ticket" && (<Ticket key={resetKey} />)}
+      {view == "Rules" && (<Rules />)}
       <Footer />
     </div>
   );
