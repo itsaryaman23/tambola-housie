@@ -91,7 +91,7 @@
     .containerNotOnHome {
         gap: 20px;
         height: auto;
-        margin-bottom: 1%;
+        margin: 8% auto;
     }
 
     .btnContainer {

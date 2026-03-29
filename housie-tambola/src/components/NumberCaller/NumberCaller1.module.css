@@ -127,6 +127,10 @@
         padding-top: 0px;
     }
 
+    .callerContainer {
+        gap: 20px;
+    }
+
     .speedButton {
         font-size: 18px;
     }
