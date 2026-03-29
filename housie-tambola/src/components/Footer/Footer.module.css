@@ -17,7 +17,7 @@
 }
 
 @media screen and (max-width: 500px) {
-    .footerText {
-        padding-bottom: 10px;
+    .footerContainer {
+        align-items: center;
     }
 }
