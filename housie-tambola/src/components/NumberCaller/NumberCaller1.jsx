@@ -10,11 +10,14 @@ const NumberCaller = () => {
     const [numberList, setNumberList] = useState(numberListOriginal);
     const [gameStatus, setGameStatus] = useState(false);
     const [gameMode, setGameMode] = useState("A");
-    const [speed, setSpeed] = useState(5);
+    const [speed, setSpeed] = useState(0.5);
     const [controlName, setControlName] = useState("Start");
     const [prev, setPrev] = useState(null);
 
     const intervalIdRef = useRef(0);
+    const currentNumberRef = useRef(0);
+    const numberListRef = useRef(numberListOriginal);
+    const calledNumbersRef = useRef(new Set());
 
     useEffect(() => {
         if (currentNumber === 0) return;
@@ -25,15 +28,16 @@ const NumberCaller = () => {
 
     useEffect(() => {
         if (numberList.length === 0) {
-            // Because the game is ending, immediately push the very last number to the board!
             if (currentNumber !== 0 && currentNumber !== "Good Game") {
-                setCalledNumbers((prevSet) => new Set([...prevSet, currentNumber]));
+                calledNumbersRef.current.add(currentNumber);
+                setCalledNumbers(new Set(calledNumbersRef.current));
                 setPrev(currentNumber);
             }
 
             setGameStatus(false);
             setControlName("Start");
             setCurrentNumber("Good Game");
+            currentNumberRef.current = "Good Game";
             return;
         }
         if (gameMode === "M") {
@@ -42,8 +46,9 @@ const NumberCaller = () => {
         if (gameStatus && gameMode === "A") {
             if (intervalIdRef.current) clearInterval(intervalIdRef.current);
             intervalIdRef.current = setInterval(() => {
-                setCalledNumbers((prevSet) => new Set([...prevSet, currentNumber]));
-                setPrev(currentNumber);
+                calledNumbersRef.current.add(currentNumberRef.current);
+                setCalledNumbers(new Set(calledNumbersRef.current));
+                setPrev(currentNumberRef.current);
                 nextNumber();
             }, 1000 * speed);
             return () => {
@@ -53,11 +58,16 @@ const NumberCaller = () => {
     }, [gameStatus, speed, numberList, currentNumber]);
 
     const nextNumber = () => {
-        const index = Math.floor(Math.random() * numberList.length);
-        const number = numberList[index];
+        if (numberListRef.current.length === 0) return;
 
+        const index = Math.floor(Math.random() * numberListRef.current.length);
+        const number = numberListRef.current[index];
+
+        currentNumberRef.current = number;
         setCurrentNumber(number);
-        setNumberList((prev) => prev.filter((_, i) => i !== index));
+
+        numberListRef.current = numberListRef.current.filter((_, i) => i !== index);
+        setNumberList(numberListRef.current);
     };
 
     const handleControl = (e) => {
@@ -78,9 +88,12 @@ const NumberCaller = () => {
         setGameStatus(false);
         setControlName("Start");
         setCurrentNumber(0);
+        currentNumberRef.current = 0;
+        calledNumbersRef.current = new Set();
         setCalledNumbers(new Set());
         setPrev(null);
         setNumberList(numberListOriginal);
+        numberListRef.current = numberListOriginal;
     }
 
     const changeSpeed = (s) => {
@@ -88,10 +101,11 @@ const NumberCaller = () => {
     };
 
     const handleNext = (e) => {
-        // Manually push to the board before picking the next number!
-        if (currentNumber !== 0 && currentNumber !== "Good Game") {
-            setCalledNumbers((prevSet) => new Set([...prevSet, currentNumber]));
-            setPrev(currentNumber);
+        const captured = currentNumberRef.current;
+        if (captured !== 0 && captured !== "Good Game") {
+            calledNumbersRef.current.add(captured);
+            setCalledNumbers(new Set(calledNumbersRef.current));
+            setPrev(captured);
         }
         nextNumber();
     };

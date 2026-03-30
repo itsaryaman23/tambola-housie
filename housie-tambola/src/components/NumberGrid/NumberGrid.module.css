@@ -24,17 +24,37 @@
 }
 
 .pressed {
-    background-color: darkgrey;
-    color: black;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    border-color: transparent;
 }
 
 .prev {
     background-color: white;
+    color: black;
+    /* font-weight: bold; */
 }
 
-/* .current {
-    background-color: white;
-} */
+.current {
+    animation: flashGlow 0.8s infinite alternate;
+}
+
+@keyframes flashGlow {
+    0% {
+        background-color: transparent;
+        color: white;
+        box-shadow: 0 0 0px transparent;
+        border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    100% {
+        background-color: white;
+        color: black;
+        box-shadow: 0 0 10px white, 0 0 20px white;
+        border-color: white;
+        transform: scale(1.1);
+    }
+}
 
 /* .gridBox:last-child {
     border: none;

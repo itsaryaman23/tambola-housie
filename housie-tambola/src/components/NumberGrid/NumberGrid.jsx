@@ -15,7 +15,9 @@ const NumberGrid = ({ calledNumbers, prev, current }) => {
                   " " +
                   (calledNumbers.has(j + 1 + i * 10) ? Styles.pressed : "") +
                   " " +
-                  (prev === j + 1 + i * 10 ? Styles.prev : "")
+                  (prev === j + 1 + i * 10 ? Styles.prev : "") +
+                  " " +
+                  (current === j + 1 + i * 10 ? Styles.current : "")
                 }
               >
                 {j + 1 + i * 10}

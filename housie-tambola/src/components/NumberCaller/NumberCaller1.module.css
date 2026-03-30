@@ -145,7 +145,7 @@
     .btnControl {
         width: 60px;
         height: 60px;
-        font-size: 13px;
+        font-size: 11px;
         margin: 5px;
     }
 
@@ -179,6 +179,11 @@
 
     .callerContainer {
         gap: 20px;
+    }
+
+    .btnControl {
+        font-size: 10px;
+
     }
 
     /* .speedButton {
