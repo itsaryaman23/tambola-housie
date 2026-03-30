@@ -10,7 +10,7 @@ const NumberCaller = () => {
     const [numberList, setNumberList] = useState(numberListOriginal);
     const [gameStatus, setGameStatus] = useState(false);
     const [gameMode, setGameMode] = useState("A");
-    const [speed, setSpeed] = useState(0.5);
+    const [speed, setSpeed] = useState(5);
     const [controlName, setControlName] = useState("Start");
     const [prev, setPrev] = useState(null);
 
