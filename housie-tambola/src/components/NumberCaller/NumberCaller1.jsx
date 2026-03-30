@@ -24,26 +24,39 @@ const NumberCaller = () => {
     }, [currentNumber]);
 
     useEffect(() => {
+        if (numberList.length === 0) {
+            // Because the game is ending, immediately push the very last number to the board!
+            if (currentNumber !== 0 && currentNumber !== "Good Game") {
+                setCalledNumbers((prevSet) => new Set([...prevSet, currentNumber]));
+                setPrev(currentNumber);
+            }
+
+            setGameStatus(false);
+            setControlName("Start");
+            setCurrentNumber("Good Game");
+            return;
+        }
         if (gameMode === "M") {
-            // nextNumber();
             return;
         }
         if (gameStatus && gameMode === "A") {
             if (intervalIdRef.current) clearInterval(intervalIdRef.current);
             intervalIdRef.current = setInterval(() => {
+                setCalledNumbers((prevSet) => new Set([...prevSet, currentNumber]));
+                setPrev(currentNumber);
                 nextNumber();
             }, 1000 * speed);
             return () => {
                 clearInterval(intervalIdRef.current);
             };
         } else clearInterval(intervalIdRef.current);
-    }, [gameStatus, speed, numberList]);
+    }, [gameStatus, speed, numberList, currentNumber]);
 
     const nextNumber = () => {
         const index = Math.floor(Math.random() * numberList.length);
         const number = numberList[index];
+
         setCurrentNumber(number);
-        // setCalledNumbers((prev) => new Set([...prev, number]));
         setNumberList((prev) => prev.filter((_, i) => i !== index));
     };
 
@@ -66,15 +79,20 @@ const NumberCaller = () => {
         setControlName("Start");
         setCurrentNumber(0);
         setCalledNumbers(new Set());
+        setPrev(null);
         setNumberList(numberListOriginal);
     }
 
     const changeSpeed = (s) => {
         setSpeed(s);
     };
+
     const handleNext = (e) => {
-        setCalledNumbers((prev) => new Set([...prev, currentNumber]));
-        setPrev(currentNumber);
+        // Manually push to the board before picking the next number!
+        if (currentNumber !== 0 && currentNumber !== "Good Game") {
+            setCalledNumbers((prevSet) => new Set([...prevSet, currentNumber]));
+            setPrev(currentNumber);
+        }
         nextNumber();
     };
 
