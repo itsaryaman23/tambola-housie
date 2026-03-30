@@ -17,8 +17,7 @@
     flex-direction: column;
     border-radius: 16px;
     overflow: hidden;
-    align-self: center;
-    justify-self: center;
+    margin: 0 auto;
 }
 
 .firstRow,
