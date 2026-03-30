@@ -115,31 +115,13 @@ const NumberCaller = () => {
                         className={
                             NumberCallerStyle.speedButton +
                             " " +
-                            (speed === 3 ? NumberCallerStyle.pressed : "") + NumberCallerStyle.btnLeft
-                        }
-                        onClick={() => changeSpeed(3)}
-                    >
-                        Fastest
-                    </button>
-                    <button
-                        className={
-                            NumberCallerStyle.speedButton +
+                            NumberCallerStyle.btnLeft +
                             " " +
-                            (speed === 4 ? NumberCallerStyle.pressed : "")
+                            (speed === 7 ? NumberCallerStyle.pressed : "")
                         }
-                        onClick={() => changeSpeed(4)}
+                        onClick={() => changeSpeed(7)}
                     >
-                        Fast
-                    </button>
-                    <button
-                        className={
-                            NumberCallerStyle.speedButton +
-                            " " +
-                            (speed === 5 ? NumberCallerStyle.pressed : "")
-                        }
-                        onClick={() => changeSpeed(5)}
-                    >
-                        Normal
+                        Slowest
                     </button>
                     <button
                         className={
@@ -155,11 +137,33 @@ const NumberCaller = () => {
                         className={
                             NumberCallerStyle.speedButton +
                             " " +
-                            (speed === 7 ? NumberCallerStyle.pressed : "") + NumberCallerStyle.btnRight
+                            (speed === 5 ? NumberCallerStyle.pressed : "")
                         }
-                        onClick={() => changeSpeed(7)}
+                        onClick={() => changeSpeed(5)}
                     >
-                        Slowest
+                        Normal
+                    </button>
+                    <button
+                        className={
+                            NumberCallerStyle.speedButton +
+                            " " +
+                            (speed === 4 ? NumberCallerStyle.pressed : "")
+                        }
+                        onClick={() => changeSpeed(4)}
+                    >
+                        Fast
+                    </button>
+                    <button
+                        className={
+                            NumberCallerStyle.speedButton +
+                            " " +
+                            NumberCallerStyle.btnRight +
+                            " " +
+                            (speed === 3 ? NumberCallerStyle.pressed : "")
+                        }
+                        onClick={() => changeSpeed(3)}
+                    >
+                        Fastest
                     </button>
                 </div>
                 <div>
