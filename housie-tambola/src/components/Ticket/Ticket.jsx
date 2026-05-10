@@ -11,8 +11,13 @@ const Ticket = () => {
   }, [])
 
   const handleClick = (e) => {
+    if(!e.target.innerText)
+      return;
     e.target.style.textDecoration = "line-through";
-    e.target.style.color = "grey";
+    // e.target.style.color = "grey";
+    e.target.style.color = "black";
+    e.target.style.backgroundColor = "lightgrey";
+    // e.target.style.color = "rgb(70, 70, 70)";
   }
   return (<>
     <div className={ticketStyle.outerBorder}>

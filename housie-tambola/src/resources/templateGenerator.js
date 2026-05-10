@@ -255,7 +255,7 @@ function validRow(row) {
     return true;
 }
 
-// console.log(possibleSpaces([1, 1, , , , 1, 1]));
+console.log(templateGenerator());
 
 export default templateGenerator;
 
